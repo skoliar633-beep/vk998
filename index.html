@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111217">
+  <meta name="description" content="Vk998 — a pocket-sized arcade for quick, cozy puzzle breaks.">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Vk998">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
+  <link rel="stylesheet" href="./styles.css">
+  <title>Vk998 — pocket arcade</title>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <button class="brand" id="home-button" aria-label="Vk998 home">
+        <span class="brand-mark" aria-hidden="true">v<span>9</span></span>
+        <span>vk<span class="brand-muted">998</span></span>
+      </button>
+      <button class="install-button" id="install-button" hidden><span aria-hidden="true">↓</span> Install app</button>
+    </header>
+
+    <main>
+      <section class="home-view" id="home-view" aria-labelledby="welcome-title">
+        <div class="hero">
+          <div class="hero-copy">
+            <span class="eyebrow"><span class="live-dot"></span> YOUR POCKET ARCADE</span>
+            <h1 id="welcome-title">A little play<br>goes a <em>long way.</em></h1>
+            <p>Three tiny games. Infinite tiny victories.<br>Pick your next favorite break.</p>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <span class="spark spark-a">✳</span><span class="spark spark-b">✦</span>
+            <div class="art-tile tile-back">8</div><div class="art-tile tile-front">4</div>
+            <span class="art-smile">⌣</span>
+          </div>
+        </div>
+        <div class="section-heading">
+          <div><span class="eyebrow">THE ARCADE</span><h2>Choose a game</h2></div>
+          <span class="game-count">03 GAMES</span>
+        </div>
+        <div class="game-list">
+          <button class="game-card memory-card" data-game="memory">
+            <span class="game-icon memory-icon" aria-hidden="true"><i>✿</i></span>
+            <span class="game-info"><span class="game-name">Memory Match</span><span class="game-description">Find the matching pairs</span><span class="best-line">BEST <b id="memory-best-home">—</b></span></span>
+            <span class="play-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button class="game-card tiles-card" data-game="2048">
+            <span class="game-icon tiles-icon" aria-hidden="true"><i>2048</i></span>
+            <span class="game-info"><span class="game-name">2048</span><span class="game-description">Slide, merge, and make 2048</span><span class="best-line">BEST <b id="2048-best-home">—</b></span></span>
+            <span class="play-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button class="game-card snake-card" data-game="snake">
+            <span class="game-icon snake-icon" aria-hidden="true"><i>〰</i></span>
+            <span class="game-info"><span class="game-name">Snake</span><span class="game-description">One more bite. Don't bonk.</span><span class="best-line">BEST <b id="snake-best-home">—</b></span></span>
+            <span class="play-arrow" aria-hidden="true">↗</span>
+          </button>
+        </div>
+        <footer class="home-footer"><span>MADE FOR LITTLE MOMENTS</span><span>✳ &nbsp; TAKE IT EASY</span></footer>
+      </section>
+
+      <section class="game-view" id="game-view" hidden aria-live="polite">
+        <div class="game-topline">
+          <button class="back-button" id="back-button"><span aria-hidden="true">←</span> All games</button>
+          <span class="eyebrow" id="game-category">MINI GAME</span>
+        </div>
+        <div class="game-heading"><div><h1 id="game-title">Memory Match</h1><p id="game-subtitle">Find all 6 pairs.</p></div><span class="game-badge" id="game-badge">✿</span></div>
+        <div class="score-row" id="score-row"></div>
+        <div class="game-stage" id="game-stage"></div>
+        <p class="game-hint" id="game-hint"></p>
+      </section>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
